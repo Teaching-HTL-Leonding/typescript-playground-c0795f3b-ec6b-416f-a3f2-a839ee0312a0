@@ -1,7 +1,7 @@
 function setup() {
-createCanvas(1400, 1500)
+createCanvas(3000, 1000)
 
-fill("orange");
+fill("red");
 rect(100, 400, 400)
 
 fill("brown");
@@ -14,8 +14,9 @@ fill("brown");
 rect(590, 540, 50, 260 )
 
 fill("green");
-circle()
-
+circle(625, 450, 170)
+circle(570, 500,170)
+circle(680,500,170)
 
 
 
