@@ -17,5 +17,5 @@ triangle(350, 290, 330, 270, 370, 270)
 
 strokeWeight(2)
 stroke("black");
-line()
+line(350, 290, , 30)
 }
