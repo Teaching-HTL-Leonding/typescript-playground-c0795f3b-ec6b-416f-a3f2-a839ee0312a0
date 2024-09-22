@@ -51,7 +51,8 @@ strokeWeight(2)
 stroke("black");
 line(375, 290, 425, 275)
 
-
+fill("lightgrey");
+triangle(200, 150, 250, 125, 225, 75)
 
 
 
