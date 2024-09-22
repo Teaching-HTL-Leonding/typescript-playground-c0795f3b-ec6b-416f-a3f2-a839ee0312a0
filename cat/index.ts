@@ -33,7 +33,7 @@ line(375, 330, 425, 315 )
 
 strokeWeight(2)
 stroke("black");
-line(325, 330, 290, 350)
+line(325, 330, 265, 320)
 
 
 
