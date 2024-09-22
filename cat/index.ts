@@ -52,7 +52,7 @@ stroke("black");
 line(375, 290, 425, 275)
 
 fill("lightgrey");
-triangle(200, 150, 250, 125, 225, 75)
+triangle(230, 120, 280, 95, 255, 45)
 
 
 
