@@ -7,10 +7,13 @@ function setup() {
   const headHeight = height * 0.50; // Head size as 50% of the canvas width
   const headX = width / 2 - headWidth / 2; // Center the head horizontally
   const headY = height / 2 - headHeight / 2; // Center the head vertically
-  const eyes1 = headX + headWidth*0.25 
-  const eyes2 = headY + headWidth*0.25
+  const eyes1 = headX+ headWidth*0.25 
+  const eyes2 = headY+ headHeight*0.25
   const mouthwidth = headWidth*0.50
-  const mouthheight= headHeight*0.10
+  const mouthheight = headHeight*0.10
+  const mouthX = headX + headWidth * 0.25; 
+  const mouthY = headY + headHeight * 0.70;
+  
 
 
 
@@ -21,16 +24,14 @@ function setup() {
   // Eyes
   fill("black");
   circle(eyes1, eyes2, 40);
-  circle(eyes1 + 100, eyes2, 40);
+  circle(eyes1 +100, eyes2, 40);
 
-  strokeWeight(3);
-  stroke("black"); 
-  
-  // Mouth
-  noFill();
-  rect(width/ 2 - mouthwidth*0.25, headHeight *0,30 - mouthheight, headHeight*0,10);;
+  //Mouth
+fill("white");
+rect(mouthX, mouthY, mouthwidth, mouthheight);
 
-
-  
 }
 
+
+ 
+ 
