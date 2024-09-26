@@ -36,7 +36,7 @@ rect(mouthX, mouthY, mouthwidth, mouthheight);
 
 //Antenna
  fill("black");
- rect(antenneX - antenneWidth / 2, antenneY, antenneWidth, antenneHeight);
+ rect (antenneX - antenneWidth / 2, antenneY, antenneWidth, antenneHeight);
  fill("white");
  circle(antenneX, antenneY, antenneWidth *8);
 
