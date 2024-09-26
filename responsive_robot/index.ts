@@ -9,8 +9,8 @@ function setup() {
   const headY = height / 2 - headHeight / 2; // Center the head vertically
   const eyes1 = headX + headWidth*0.25 
   const eyes2 = headY + headWidth*0.25
-  const mouthWidth = headWidth*0.50
-  const mouthHight= headHeight*0.10
+  const mouthwidth = headWidth*0.50
+  const mouthheight= headHeight*0.10
 
 
 
@@ -27,8 +27,8 @@ function setup() {
   stroke("black"); 
   
   // Mouth
-  fill("White");
-  rect(width/ 2 - mouthWidth);
+  noFill();
+  rect(width/ 2 - mouthwidth*0.25, headHeight *0,30 - mouthheight, headHeight*0,10);;
 
 
   
