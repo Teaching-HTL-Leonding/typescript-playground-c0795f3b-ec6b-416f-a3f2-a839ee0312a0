@@ -13,7 +13,7 @@ function setup() {
   const mouthheight = headHeight*0.10
   const mouthX = headX + headWidth*0.25; 
   const mouthY = headY + headHeight*0.70;
-  const antenneX = headY + headWidth*0.70
+  const antenneX = headY + headWidth/2
   const antenneY = headX - headHeight*0.25
   const antenneHeight = headHeight*0.25
   const antenneWidth = headWidth*0.01
@@ -33,6 +33,15 @@ function setup() {
   //Mouth
 fill("white");
 rect(mouthX, mouthY, mouthwidth, mouthheight);
+
+//Antenna
+ fill("black");
+ rect(antenneX - antenneWidth / 2, antenneY, antenneWidth, antenneHeight);
+ fill("white");
+ circle(antenneX, antenneY, antenneWidth *8);
+
+
+}
 
 
 }
