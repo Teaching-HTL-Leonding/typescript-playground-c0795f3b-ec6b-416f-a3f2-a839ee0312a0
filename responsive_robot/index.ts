@@ -11,9 +11,12 @@ function setup() {
   const eyes2 = headY+ headHeight*0.25
   const mouthwidth = headWidth*0.50
   const mouthheight = headHeight*0.10
-  const mouthX = headX + headWidth * 0.25; 
-  const mouthY = headY + headHeight * 0.70;
-
+  const mouthX = headX + headWidth*0.25; 
+  const mouthY = headY + headHeight*0.70;
+  const antenneX = headY + headWidth*0.70
+  const antenneY = 
+  const antenneHeight =
+  const antenneWidth =
 
 
 
@@ -32,4 +35,4 @@ fill("white");
 rect(mouthX, mouthY, mouthwidth, mouthheight);
 
 
- 
+}
