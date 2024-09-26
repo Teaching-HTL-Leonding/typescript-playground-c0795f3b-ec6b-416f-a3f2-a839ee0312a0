@@ -14,9 +14,9 @@ function setup() {
   const mouthX = headX + headWidth*0.25; 
   const mouthY = headY + headHeight*0.70;
   const antenneX = headY + headWidth*0.70
-  const antenneY = 
-  const antenneHeight =
-  const antenneWidth =
+  const antenneY = headX - headHeight*0.25
+  const antenneHeight = headHeight*0.25
+  const antenneWidth = headWidth*0.01
 
 
 
