@@ -21,17 +21,3 @@ background("skyblue");
   fill("black");
   text(mouseProtocol, 20, 20, 360, 360 );
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
