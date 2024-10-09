@@ -12,7 +12,16 @@ function setup() {
     fill("green");
     rect(width / 3 * 2, 0, width / 3);
 }
+    function mouseClicked() {
+
+    fill("black");
+    rect(0, 150, width, 50);
+
+    fill("white");
+
+    
 
 
 
 
+}
