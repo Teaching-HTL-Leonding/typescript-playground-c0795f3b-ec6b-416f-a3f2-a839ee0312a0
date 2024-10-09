@@ -17,9 +17,23 @@ function setup() {
     fill("black");
     rect(0, 150, width, 50);
 
-    fill("white");
+    fill("white");}
 
-    
+     if (mouseX < width / 3) {
+        message = "Yellow"
+         } else if (mouseX < width / 3 * 2) {
+        message = "Red";
+        
+        message = "Green";}
+
+
+
+    textAlign(CENTER);
+    textSize(40);
+    text(message, 200, 180);
+
+
+
 
 
 
