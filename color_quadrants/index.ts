@@ -32,10 +32,10 @@ function mouseClicked() {
     if (mouseX < width / 2 && mouseY < height / 2) {
         message = "Yellow"
     }
-    else if(mouseX > width / 2 && mouseY < height / 2)  {
+    else if (mouseX > width / 2 && mouseY < height / 2) {
         message = "Red";
     }
-    else if(mouseX < width / 2 && mouseY > height / 2) {
+    else if (mouseX < width / 2 && mouseY > height / 2) {
         message = "Green";
     }
     else {
