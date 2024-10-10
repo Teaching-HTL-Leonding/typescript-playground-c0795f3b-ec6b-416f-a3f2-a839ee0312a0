@@ -20,3 +20,13 @@ function setup() {
 
 }
 
+function mouseClicked() {
+    fill("black");
+    rect(width / 2 - width / 4, height / 2 - height / 6, width / 2, height / 3);
+
+    fill("white");
+
+    let message: string;
+
+
+   
