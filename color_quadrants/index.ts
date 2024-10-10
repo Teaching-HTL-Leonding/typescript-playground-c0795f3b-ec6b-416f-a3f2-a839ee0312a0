@@ -29,4 +29,20 @@ function mouseClicked() {
     let message: string;
 
 
-   
+    if (mouseX < width / 2 && mouseY < height / 2) {
+        message = "Yellow"
+    }
+    else if (mouseX > width / 2 && mouseY < height / 2) {
+        message = "Red";
+    }
+    else if (mouseX < width / 2 && mouseY > height / 2) {
+        message = "Green";
+    }
+    else {
+        message = "Blue"
+    }
+
+    textAlign(CENTER, CENTER);
+    textSize(30);
+    text(message, width / 2, height / 2);
+}
