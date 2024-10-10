@@ -6,6 +6,13 @@ const num = Math.floor(random(0, 1_000_000));
  const lastDigit1 = num % 10
  let numWithoutLastDigit = Math.floor(num / 10);
 
+ const digit2 = numWithoutLastDigit % 10;
+  numWithoutLastDigit = Math.floor(numWithoutLastDigit / 10);
+
+  const digit3 = numWithoutLastDigit % 10;
+  numWithoutLastDigit = Math.floor(numWithoutLastDigit/ 10);
+
+ 
 
 
  
