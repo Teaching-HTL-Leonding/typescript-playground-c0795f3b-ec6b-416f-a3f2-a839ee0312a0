@@ -1,7 +1,7 @@
 function setup() {
 createCanvas(400, 400); 
 background ("black") 
-const num = Math.floor(random(0, 1_000_000));
+const num = Math.floor(random(0, 64));
 
  const lastDigit1 = num % 2
  let numWithoutLastDigit = Math.floor(num / 2);
