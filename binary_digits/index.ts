@@ -3,7 +3,7 @@ createCanvas(400, 400);
 background ("black") 
 const num = Math.floor(random(0, 1_000_000));
 
- const lastDigit1 = num % 10
+ const lastDigit1 = num % 2
  let numWithoutLastDigit = Math.floor(num / 2);
 
  const digit2 = numWithoutLastDigit % 2;
