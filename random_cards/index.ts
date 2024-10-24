@@ -24,8 +24,10 @@ case 11: cardName = "J"; break;
 case 12: cardName = "Q"; break;
 case 13: cardName = "K"; break;
 default: cardName = `${cardIx}`; break;
-  
 }
+cardImage = loadImage(`${BASE_URL}/${colorname}/${cardName}.png`);
+  
+
 }
 function setup() {
   createCanvas(250, 250);
