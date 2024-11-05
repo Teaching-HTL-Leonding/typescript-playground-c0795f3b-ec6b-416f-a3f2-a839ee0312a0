@@ -9,123 +9,113 @@ const SCISSORS_LEFT = 300;
 const ICON_WIDTH = 100;
 const ICON_TOP = 75;
 const ICON_HEIGHT = 100;
-let computerChoice = 0;
-let userChoice = 0;
-let resulttext = "";
-let computer: string;
-let selected: string;
-
+ 
+ 
 function setup() {
     createCanvas(500, 490);
     background("black");
-
+ 
     fill("yellow");
     textSize(30);
     text("Human:", TEXT_LEFT, 50);
-
+ 
+ 
     // Display the icons for "stone", "paper", and "scissors".
     textSize(75);
-    const HUMAN_SYMBOLS_TOP = 150;
-    text("🪨", STONE_LEFT, HUMAN_SYMBOLS_TOP);
-    text("📃", PAPER_LEFT, HUMAN_SYMBOLS_TOP);
-    text("✂️", SCISSORS_LEFT, HUMAN_SYMBOLS_TOP);
+    text("🪨", STONE_LEFT, 150);
+    text("📃", PAPER_LEFT, 150);
+    text("✂️", SCISSORS_LEFT, 150);
+ 
+ 
+    // <<< Add your code here
 }
-
+ 
 function mouseMoved() {
-    // This function highlights the icon currently being hovered over by the mouse.
-    // <<< Add code here to disable the hover effect once the user has made a choice
-    noFill();
-    strokeWeight(3);
-
-    // In the following lines of code, we repeatedly check if the mouse
-    // is vertically in the relevant area. Therefore, we calculate the boolean
-    // value once and use the variable later multiple times.
-    const isInVertical = mouseY >= ICON_TOP && mouseY < ICON_TOP + ICON_HEIGHT;
-
-    // Check if the mouse is over the "stone" icon.
-    if (isInVertical && mouseX >= STONE_LEFT && mouseX < STONE_LEFT + ICON_WIDTH) {
-        stroke("yellow"); // Highlight with yellow.
-    } else {
-        stroke("black"); // Remove highlight by drawing in black.
-    }
-    // Draw a rectangle around the "stone" icon.
-    rect(STONE_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
-
-    // Same for paper
-    if (isInVertical && mouseX >= PAPER_LEFT && mouseX < PAPER_LEFT + ICON_WIDTH) {
+    // <<< Add your code here
+    if (mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+        noFill();
         stroke("yellow");
+        strokeWeight(5);
+        rect(50, 75, 100, 100);
     } else {
+        noFill();
         stroke("black");
+        strokeWeight(5);
+        rect(50, 75, 100, 100);
     }
-    rect(PAPER_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
-
-    // Same for scissors
-    if (isInVertical && mouseX >= SCISSORS_LEFT && mouseX < SCISSORS_LEFT + ICON_WIDTH) {
+    if (mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+        noFill();
         stroke("yellow");
+        strokeWeight(5);
+        rect(175, 75, 100, 100);
     } else {
+        noFill();
         stroke("black");
+        strokeWeight(5);
+        rect(175, 75, 100, 100);
     }
-    rect(SCISSORS_LEFT, ICON_TOP, ICON_WIDTH, ICON_HEIGHT);
+    if (mouseX >= 300 && mouseX <= 300 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+        noFill();
+        stroke("yellow");
+        strokeWeight(5);
+        rect(300, 75, 100, 100);
+    } else {
+        noFill();
+        stroke("black");
+        strokeWeight(5);
+        rect(300, 75, 100, 100);
+    }
 }
-
+let selected = "";
+let computer = "";
 function mouseClicked() {
-if (computer === "")
-
-const isINVertical = mouseY >= ICON_TOP && mouseY <= ICON_TOP + ICON_HEIGHT
-if (isINVertical && mouseX >= STONE_LEFT && STONE_LEFT && mouseX <= STONE_LEFT + ICON_WIDTH )
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    // <<< Add code here to let the user choose an option and find out the winner
+    if (computer === "") {
+        if (mouseX >= 50 && mouseX <= 50 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "🪨";
+ 
+        } if (mouseX >= 175 && mouseX <= 175 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "📃";
+ 
+        } if (mouseX >= 300 && mouseX <= 300 + ICON_WIDTH && mouseY >= 75 && mouseY <= 50 + ICON_HEIGHT) {
+            selected = "✂️";
+        }
+        let computerpick = Math.floor(random(0, 3));
+        if (computerpick === 0) {
+            computer = "🪨";
+        } else if (computerpick === 1) {
+            computer = "📃";
+        } else if (computerpick === 2) {
+            computer = "✂️";
+        }
+        noStroke();
+        textSize(30);
+        fill("yellow");
+        text("Computer:", TEXT_LEFT, 300);
+        textSize(75);
+        text(computer, 175, 300);
+        textSize(30);
+ 
+ 
+        let result = "";
+        if (selected === computer) {
+            result = "It`s a tie!";
+        } else if (selected === "🪨" && computer === "📃") {
+            result = "Computer wins!";
+        } else if (selected === "🪨" && computer === "✂️") {
+            result = "Human wins!";
+        } else if (selected === "📃" && computer === "🪨") {
+            result = "Human wins!";
+        } else if (selected === "📃" && computer === "✂️") {
+            result = "Computer wins!";
+        } else if (selected === "✂️" && computer === "🪨") {
+            result = "Computer wins!";
+        } else if (selected === "✂️" && computer === "📃") {
+            result = "Human wins!";
+        }
+        text(`${result}`, TEXT_LEFT, 450);
+    }
+ 
 }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-}
