@@ -76,8 +76,8 @@ displayNumber = displayNumber * 10 + 0
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
 displayNumber = 0
 }
- 
-
+if (displayNumber > 10000000000000)
+displayNumber = 0
          
 
 
