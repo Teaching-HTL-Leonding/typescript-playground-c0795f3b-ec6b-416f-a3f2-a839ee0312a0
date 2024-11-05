@@ -3,7 +3,7 @@ const MARGIN_NUM = 10;
 let num: number = 0;          // Current number entered by the user
 let lineHeight: number = 0;   // Height of a line of the responsive layout
 let cellWidth: number = 0;    // Width of a cell of the responsive layout
-let displayNumber: string = "";
+let displayNumber: number = 0;
 function setup() {
     createCanvas(300, 500);
     lineHeight = height / 5;
@@ -44,39 +44,41 @@ textAlign(CENTER, CENTER);
 
 function mouseClicked() {
 if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight && mouseY < lineHeight * 2){
-displayNumber += "7";
+displayNumber = displayNumber * 10 + 7
 }
 if(mouseX > cellWidth && mouseX < cellWidth * 2 && mouseY > lineHeight && mouseY < lineHeight * 2){
-displayNumber += "8";
+displayNumber = displayNumber * 10 + 8
 }
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight && mouseY < lineHeight * 2){
-displayNumber += "9";
+displayNumber = displayNumber * 10 + 9
 }
 if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
-displayNumber += "4";
+displayNumber = displayNumber * 10 + 4
 }
 if(mouseX > cellWidth && mouseX < cellWidth * 2 && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
-displayNumber += "5";
+displayNumber = displayNumber * 10 + 5
 }
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 2 && mouseY < lineHeight * 3){
-displayNumber += "6";
+displayNumber = displayNumber * 10 + 6
 }
 if(mouseX > 0 && mouseX < cellWidth && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
-displayNumber += "1";
+displayNumber = displayNumber * 10 + 1
 }
 if(mouseX > cellWidth  && mouseX < cellWidth * 2 && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
-displayNumber += "2";
+displayNumber = displayNumber * 10 + 2
 }
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 3 && mouseY < lineHeight * 4){
-displayNumber += "3";
+displayNumber = displayNumber * 10 + 3
 }
 if(mouseX > 0 && mouseX < cellWidth * 2 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
-displayNumber += "0";
+displayNumber = displayNumber * 10 + 0
 }
 if(mouseX > cellWidth * 2 && mouseX < cellWidth * 3 && mouseY > lineHeight * 4 && mouseY < lineHeight * 5){
-displayNumber = "";
+displayNumber = 0
 }
+ 
 
+         
 
 
 
