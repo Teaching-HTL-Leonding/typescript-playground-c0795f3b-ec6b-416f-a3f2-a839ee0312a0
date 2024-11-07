@@ -29,15 +29,16 @@ function setup() {
     randomnum4 = Math.floor(random(1, 101));
     randomnum5 = Math.floor(random(1, 101));
 
-    dice = Math.floor(random(1, 4));
-    if (dice === 1)
-        textmessage = "+";
+    dice = Math.floor(random(1, 4)); {
+    } if (dice === 1)
+        textmessage = "+"; {
 
-    else if (dice === 2)
-        textmessage = "-";
+    }else if (dice === 2)
+        textmessage = "-"; {
 
-    else if (dice === 3)
+    }else if (dice === 3) {
         textmessage = "*";
+    }
 
     fill("yellow");
     textSize(40);
@@ -49,9 +50,9 @@ function setup() {
     const computersymbole = Math.floor(random(0, 3));
     if (computersymbole === 0) {
         randomnum3 = rightAnswer;
-    }else if(computersymbole === 0){
+    } else if (computersymbole === 0) {
         randomnum4 = rightAnswer;
-    }else if(computersymbole === 0){
+    } else if (computersymbole === 0) {
         randomnum5 = rightAnswer;
 
 
