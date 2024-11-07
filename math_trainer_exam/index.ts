@@ -30,7 +30,7 @@ function setup() {
 
     fill("yellow");
     textSize(25);
-    text(`${randomnum1} ${ message} ${randomnum2}`, width / 2 - 70, 50);
+    text(`${randomnum1} ${ textmessage} ${randomnum2}`, width / 2 - 70, 50);
 
 
 
