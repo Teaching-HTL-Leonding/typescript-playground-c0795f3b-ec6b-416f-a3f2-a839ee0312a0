@@ -2,8 +2,12 @@
 // of a randomly generated arithmetic operation.
 
 // <<< TODO: Declare your GLOBAL variables here
-let randomn1 = 0;
-let randomn2 = 0;
+let randomnum1 = 0;
+let randomnum2 = 0;
+let dice1 = 0;
+let dice2 = 0;
+let dice3 = 0;
+let textmessage: string;
 
 
 // setup function runs once and sets up the quiz elements on the canvas
@@ -11,12 +15,30 @@ function setup() {
     createCanvas(400, 400);
     background("black");
 
+    randomnum1 = Math.floor(random(1,101));
+    randomnum2 = Math.floor(random(1,101));
+
+    const dice = Math.floor(random(1, 4));
+    if (dice === 1 )
+    textmessage = "+";
+
+    if (dice === 2)
+    textmessage = "-";
+
+    if (dice === 3)
+    textmessage = "*";
+
     fill("yellow");
-    textSize(10);
-    text(`$(randomn2)` - (`$(randomn2)`, width / 2, 70, 50))
+    textSize(25);
+    text(`${randomnum1} ${ message} ${randomnum2}`, width / 2 - 70, 50);
 
 
-    const randomnum = Math.floor(random(0, 101));
+
+    
+    
+
+
+    
 }
 
 // mouseClicked function checks if the user clicked on the correct answer
