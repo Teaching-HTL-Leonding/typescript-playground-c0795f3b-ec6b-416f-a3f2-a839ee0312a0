@@ -14,11 +14,13 @@
         rect(i, i, 25, 25)
         i += GRID
     }
-    let x = GRID
-    while (i < SIZE - GRID && x > GRID) {
+    let x =  SIZE - GRID
+    let y = GRID
+    while (y < SIZE - GRID && x > GRID) {
         fill("green")
-        rect(i, x, i, GRID, GRID)
+        rect(x, y, GRID, GRID)
         x -= GRID
+        y += GRID
     }
 }
 
