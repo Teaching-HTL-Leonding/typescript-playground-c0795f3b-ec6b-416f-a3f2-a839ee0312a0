@@ -18,7 +18,7 @@
     let y = GRID
     while (y < SIZE - GRID && x > GRID) {
         fill("green")
-        rect(x, y, GRID, GRID)
+        rect(x - GRID, y , GRID, GRID)
         x -= GRID
         y += GRID
     }
