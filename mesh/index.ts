@@ -11,6 +11,8 @@ function setup() {
 
   // <<< Add your code here
   for(let i = MARGIN; i < SIZE; i += MARGIN){
-    line(MARGIN, i, SIZE - MARGIN, MARGIN)
+    for(let j = MARGIN; j < SIZE; j += MARGIN)
+    line(MARGIN, j, SIZE - MARGIN, i)
+    
 }
 }
