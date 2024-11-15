@@ -9,35 +9,33 @@ function setup() {
     stroke("lightgray");
 
     // Draw vertical lines
-    let i = GRID;
-    while (i < SIZE) {
-        line(i, 0, i, SIZE);
-        i += GRID;
-    }
+    for (let i = GRID; i < SIZE; i += GRID)
+        while (i < SIZE) {
+            line(i, 0, i, SIZE);
+            i += GRID;
+        }
 
     // Draw horizontal lines
-    i = GRID;
-    while (i < SIZE) {
-        line(0, i, SIZE, i);
-        i += GRID;
+    for (let i = GRID; i < SIZE; i += GRID) {
+    line(0, i, SIZE, i);
+
     }
 
     strokeWeight(2);
 
     // Draw left part of the lines
-    i = GRID;
-    stroke("yellow");
-    while(i < SIZE){
+    for (let i = GRID; i < SIZE; i += GRID) {
+        stroke("yellow");
+
         line(GRID, i, GRID * (i / GRID), i)
-        i += GRID
-    }        
+
+    }
 
     // Draw right part of the lines
-    i = GRID
     stroke("red");
     // <<< Write your code here
-    while(i < SIZE){
+    for (let i = GRID; i < SIZE; i += GRID) {
         line(GRID * (i / GRID), i, SIZE - GRID, i)
-        i += GRID
-}
+
+    }
 }
