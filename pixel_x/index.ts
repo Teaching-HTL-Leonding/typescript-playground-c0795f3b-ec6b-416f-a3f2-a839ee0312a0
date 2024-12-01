@@ -5,21 +5,21 @@ function setup() {
     createCanvas(SIZE, SIZE);
     background("black");
 
-
     noStroke();
 
+    // <<< Add your code here
+
     let i = GRID;
-    while(i < SIZE - GRID){
+    while (i < SIZE - GRID) {
         fill("yellow");
         rect(i, i, 25, 25,)
         i += GRID;
-    }
-    i = GRID;
-    while(i < SIZE - GRID){
-        fill("green");
-        rect(i, SIZE - i - 25, 25, 25);
-        i += GRID;
-    }
 
-    // <<< Add your code here
+        i = GRID;
+        while (i < SIZE - GRID) {
+            fill("green");
+            rect(i, SIZE - i - 25, GRID, GRID)
+            i += GRID
+        }
+    }
 }
