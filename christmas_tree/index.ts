@@ -1,3 +1,4 @@
+
 const TOP_MARGIN = 80;
 const SPHERE_DIAMETER = 30;
 const INITIAL_TRIANGLE_BASE_WIDTH = 100;
@@ -8,19 +9,25 @@ const TRUNK_WIDTH = 50;
 const TRUNK_HEIGHT = 50;
 
 function setup() {
+  colorMode(HSB)
+  let colorofcircle = 0;
   createCanvas(500, 500);
   background("black");
-  fill("green");
   noStroke();
 
-  // <<< Draw the tree
-  let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH
   translate(width / 2, TOP_MARGIN);
-  for(let i = 0; i <= NUMBER_OF_LAYERS; i ++){
-    triangle(trianglewidth / 2, trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2);
+  fill("green");
+  let trianglewidth = INITIAL_TRIANGLE_BASE_WIDTH;
+  for (let i = 0; i < NUMBER_OF_LAYERS; i++) {
+    fill("green");
+    triangle(- trianglewidth / 2, trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2)
+    fill(colorofcircle, 50, 50);
+    circle(- trianglewidth / 2, trianglewidth / 2 + 15, SPHERE_DIAMETER)
+    circle(trianglewidth / 2, trianglewidth / 2 + 15, SPHERE_DIAMETER)
     translate(0, trianglewidth / 4);
-    trianglewidth *= 1,5;
-    fill("brown");
-
-}
+    trianglewidth *= 1.5;
+    colorofcircle += 50;
+   }
+   fill("brown");
+   rect(- 25, 84, 50, 50);
 }
