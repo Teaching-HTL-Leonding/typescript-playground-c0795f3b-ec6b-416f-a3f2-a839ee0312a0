@@ -1,3 +1,4 @@
+
 const TOP_MARGIN = 80;
 const SPHERE_DIAMETER = 30;
 const INITIAL_TRIANGLE_BASE_WIDTH = 100;
@@ -29,5 +30,9 @@ function setup() {
     trianglewidth *= 1.5;
     colorofcircle += 50;
 
+
 }
+fill("brown");
+  rect(-25, 84, 50, 50);
 }
+
