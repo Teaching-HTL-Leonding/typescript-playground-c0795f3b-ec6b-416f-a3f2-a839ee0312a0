@@ -26,7 +26,7 @@ function setup() {
     triangle(- trianglewidth / 2, trianglewidth / 2, 0, 0, trianglewidth / 2, trianglewidth / 2);
     translate(0, trianglewidth / 4);
     trianglewidth *= 1.5;
-    fill("brown");
+     fill("brown");
     rect(- TRUNK_WIDTH / 2, trianglewidth / 2, TRUNK_WIDTH, TRUNK_HEIGHT);
   }
     for(let x = 0; x <= SIZE; x += 50){
@@ -38,5 +38,5 @@ function setup() {
       circlewidth *= 1.5;
       color1 += 80;
     }
- 
+   
 }
