@@ -29,12 +29,13 @@ function mouseMoved() {
             line(0, Heigh1, 10, Heigh2);
             Heigh1 += 10;
             line(0, Heigh2, 0, Heigh1);
+            Heigh2 += 10;
 
 
         }
+        translate(10, 0);
         Heigh1 = 0;
         Heigh2 = 5;
-        translate(10, 0);
     }
 
 }
