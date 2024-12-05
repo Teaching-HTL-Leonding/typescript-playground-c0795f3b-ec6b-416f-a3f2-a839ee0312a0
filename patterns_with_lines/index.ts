@@ -22,7 +22,7 @@ function mouseMoved() {
     textAlign(CENTER, CENTER);
     fill("white");
     let mousexnum = Math.round(mouseX / 601 * 100);
-    text(`$(mouseX) of 601 = $(mousexnum)%`, 70, 295);
+    text(`${mouseX} of 601 = ${mousexnum}%`, 70, 295);
 
     noFill();
     stroke("aqua");
@@ -30,7 +30,9 @@ function mouseMoved() {
     // <<< Add your code here
     let Heighline1 = 0;
     let Heighline2 = 5;
+    let color = 0;
     for (let i = 0; i < 601; i++) {
+        stroke(color, 100, 100);
         for (let j = 0; j < 27; j += 1) {
             line(0, Heighline1, 10, Heighline2);
             Heighline1 += 10;
