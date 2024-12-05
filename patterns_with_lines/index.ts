@@ -21,8 +21,8 @@ function mouseMoved() {
     textSize(15);
     textAlign(CENTER, CENTER);
     fill("white");
-    let mousexnum = Math.round(mouseX / 601 * 100);
-    text(`${mouseX} of 601 = ${mousexnum}%`, 70, 295);
+    let mousexnummer = Math.round(mouseX / 601 * 100);
+    text(`${mouseX} of 601 = ${mousexnummer}%`, 70, 295);
 
     noFill();
     stroke("aqua");
@@ -39,7 +39,7 @@ function mouseMoved() {
             Heigh1 += 10;
             line(10, Heigh2, 0, Heigh1);
             Heigh2 += 10;
-            color = (color + 0.23) % 360;
+            color = (color + 0.22) % 360;
 
 
         }
