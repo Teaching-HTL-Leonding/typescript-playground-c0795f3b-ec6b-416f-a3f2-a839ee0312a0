@@ -39,7 +39,7 @@ function mouseMoved() {
             Heigh1 += 10;
             line(10, Heigh2, 0, Heigh1);
             Heigh2 += 10;
-            color1 = (color1 + 0.2) % 360;
+            color1 = (color1 + 0.23) % 360;
 
 
         }
