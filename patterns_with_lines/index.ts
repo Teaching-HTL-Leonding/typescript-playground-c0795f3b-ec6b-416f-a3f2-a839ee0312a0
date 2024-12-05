@@ -28,22 +28,24 @@ function mouseMoved() {
     stroke("aqua");
 
     // <<< Add your code here
-    let Heighline1 = 0;
-    let Heighline2 = 5;
-    let color = 0;
+    let Heigh1 = 0;
+    let Heigh2 = 5;
+    let color1 = 0;
     for (let i = 0; i < 601; i++) {
-        stroke(color, 100, 100);
+        colorMode(HSB);
+        stroke(color1, 100, 100);
         for (let j = 0; j < 27; j += 1) {
-            line(0, Heighline1, 10, Heighline2);
-            Heighline1 += 10;
-            line(10, Heighline2, 0, Heighline1);
-            Heighline2 += 10;
+            line(0, Heigh1, 10, Heigh2);
+            Heigh1 += 10;
+            line(10, Heigh2, 0, Heigh1);
+            Heigh2 += 10;
+            color1 = (color1 + 0.2) % 360;
 
 
         }
         translate(10, 0);
-        Heighline1 = 0;
-        Heighline2 = 5;
+        Heigh1 = 0;
+        Heigh2 = 5;
     }
 
 }
