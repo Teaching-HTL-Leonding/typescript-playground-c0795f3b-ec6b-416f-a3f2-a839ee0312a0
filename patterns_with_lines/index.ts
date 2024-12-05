@@ -15,8 +15,10 @@ function setup() {
     for (let i = 0; i < SIZE; i ++) {
         for(let j = 0; j < 50; j += 1){
             line(0, Heigh1, 0, Heigh2);
-            line(0, Heigh2, 0, Heigh2 );
-            translate(Heigh2, 0);
+            line(0, Heigh1, 0, 10 );
+            Heigh1 += 10;
+            Heigh2 += 10;
+            translate(Heigh1, 0);
 
         }
 
