@@ -30,16 +30,16 @@ function mouseMoved() {
     // <<< Add your code here
     let Heigh1 = 0;
     let Heigh2 = 5;
-    let color1 = 0;
+    let color = 0;
     for (let i = 0; i < 601; i++) {
         colorMode(HSB);
-        stroke(color1, 100, 100);
+        stroke(color, 100, 100);
         for (let j = 0; j < 27; j += 1) {
             line(0, Heigh1, 10, Heigh2);
             Heigh1 += 10;
             line(10, Heigh2, 0, Heigh1);
             Heigh2 += 10;
-            color1 = (color1 + 0.23) % 360;
+            color = (color + 0.23) % 360;
 
 
         }
