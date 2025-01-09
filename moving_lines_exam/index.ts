@@ -87,32 +87,35 @@ function draw() {
         pop();
     }
 }
-        function mouseClicked() {
-            if (mouseX > 0 && mouseX < 50 && mouseY > 0 && mouseY < 50) {
-                linie = linie - 1
-                lineStartX.push(random(50, 450));
-                lineStartY.push(random(50, 450));
-                lineEndX.push(random(50, 450));
-                lineEndY.push(random(50, 450));
+function mouseClicked() {
+    if (mouseX > 0 && mouseX < 50 && mouseY > 0 && mouseY < 50) {
+        linie = linie + 1
+        lineStartX.push(random(50, 450));
+        lineStartY.push(random(50, 450));
+        lineEndX.push(random(50, 450));
+        lineEndY.push(random(50, 450));
 
 
-                lineStartDx.push(random(0, 5));
-                lineStartDy.push(random(0, 5));
-                lineEndDx.push(random(0, 5));
-                lineEndDy.push(random(0, 5));
-            }
-            if(mouseX > 50 && mouseX < 100 && mouseY > 0 && mouseY < 50){
-                lineStartX.splice(linie - 1);
-                lineStartY.splice(linie - 1);
-                lineStartDx.splice(linie - 1);
-                lineStartDy.splice(linie - 1);
-            
-            lineStartX.splice(linie);
-                lineStartY.splice(linie);
-                lineStartDx.splice(linie);
-                lineStartDy.splice(linie);
-            }
-          
-        }
-    
-    
+        lineStartDx.push(random(0, 5));
+        lineStartDy.push(random(0, 5));
+        lineEndDx.push(random(0, 5));
+        lineEndDy.push(random(0, 5));
+
+        lineColor.push(random(minColor, maxColor))
+    }
+    if (mouseX > 50 && mouseX < 100 && mouseY > 0 && mouseY < 50) {
+           linie = linie - 1
+        lineStartX.splice(linie, 1);
+        lineStartY.splice(linie, 1);
+        lineStartDx.splice(linie, 1);
+        lineStartDy.splice(linie, 1);
+
+        lineStartX.splice(linie, 1);
+        lineStartY.splice(linie, 1);
+        lineStartDx.splice(linie, 1);
+        lineStartDy.splice(linie, 1);
+    }
+
+}
+
+
