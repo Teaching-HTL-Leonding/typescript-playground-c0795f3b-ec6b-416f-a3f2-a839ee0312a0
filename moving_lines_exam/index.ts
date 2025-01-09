@@ -26,14 +26,18 @@ function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
     let num = 0;
-    for(let i = 0; CONFIGURATION.length; i++){
-        if (CONFIGURATION[i] === ";"){
-        linie = num
-        num = 0;
-        } 
-        else if(CONFIGURATION[i] === ","){
+    for (let i = 0; i < CONFIGURATION.length; i++) {
+        if (CONFIGURATION[i] === ";") {
+            linie = num
+            num = 0;
+        }
+        else if (CONFIGURATION[i] === "-") {
             minColor = num
             num = 0;
+        } else { num = num * 10 + parseInt(CONFIGURATION[i]) }
+    }
+    maxColor = num
+
 
     for (let i = 0; i < linie; i++) {
         // Set random start and end position
@@ -52,9 +56,6 @@ function setup() {
         lineColor.push(random(minColor, maxColor));
     }
 }
-    }
-}
-
 function draw() {
     background("black");
     for (let i = 0; i < linie; i++) {
@@ -67,9 +68,6 @@ function draw() {
         line(25, 15, 25, 35);
         //minus
         line(65, 25, 85, 25);
-
-
-
 
         push();
         // Draw current line
@@ -131,5 +129,3 @@ function mouseClicked() {
     }
 
 }
-
-
