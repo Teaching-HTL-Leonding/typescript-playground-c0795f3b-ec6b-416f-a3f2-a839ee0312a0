@@ -26,7 +26,7 @@ function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
 
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 10; i++) {
         // Set random start and end position
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -46,7 +46,7 @@ function setup() {
 
 function draw() {
     background("black");
-    for (let i = 0; i < 9; i++) {
+    for (let i = 0; i < 10; i++) {
         fill("grey");
         rect(0, 0, 50, 50)
         rect(50, 0, 50, 50)
