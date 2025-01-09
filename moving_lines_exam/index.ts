@@ -25,6 +25,15 @@ let linie = 10;
 function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
+    let num = 0;
+    for(let i = 0; CONFIGURATION.length; i++){
+        if (CONFIGURATION[i] === ";"){
+        linie = num
+        num = 0;
+        } 
+        else if(CONFIGURATION[i] === ","){
+            minColor = num
+            num = 0;
 
     for (let i = 0; i < linie; i++) {
         // Set random start and end position
@@ -43,19 +52,24 @@ function setup() {
         lineColor.push(random(minColor, maxColor));
     }
 }
+    }
+}
 
 function draw() {
     background("black");
     for (let i = 0; i < linie; i++) {
         fill("grey");
-        rect(0, 0, 50, 50)
-        rect(50, 0, 50, 50)
+        rect(0, 0, 50, 50);
+        rect(50, 0, 50, 50);
+        //plus
         stroke("black");
-        // Plus
-        line(15, 25, 35, 25);
+        line(15, 25, 35, 25)
         line(25, 15, 25, 35);
-        // Minus
-        line(65, 25, 85, 25)
+        //minus
+        line(65, 25, 85, 25);
+
+
+
 
         push();
         // Draw current line
@@ -88,7 +102,7 @@ function draw() {
     }
 }
 function mouseClicked() {
-    if (mouseX >= 0 && mouseX <= 50 && mouseY >= 0 && mouseY <= 50) {
+    if (mouseX > 0 && mouseX < 50 && mouseY > 0 && mouseY < 50) {
         linie = linie + 1
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -103,7 +117,7 @@ function mouseClicked() {
 
         lineColor.push(random(minColor, maxColor))
     }
-    if (mouseX > 50 && mouseX < 100 && mouseY > 0 && mouseY < 50) {
+    if (mouseX > 50 && mouseX < 100 && mouseY > 0 && mouseY < 50 && linie > 1) {
         linie = linie - 1
         lineStartX.splice(linie, 1);
         lineStartY.splice(linie, 1);
