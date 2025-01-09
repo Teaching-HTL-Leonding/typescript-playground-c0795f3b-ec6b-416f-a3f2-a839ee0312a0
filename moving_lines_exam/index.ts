@@ -20,13 +20,13 @@ let lineEndDy: number[] = [];
 let minColor = 0;               // Lower bound of random hue value
 let maxColor = 360;             // Upper bound of random hue value
 
-let linie = 0;
+let linie = 10;
 
 function setup() {
     createCanvas(500, 500);
     colorMode(HSB);
 
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < linie; i++) {
         // Set random start and end position
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -46,7 +46,7 @@ function setup() {
 
 function draw() {
     background("black");
-    for (let i = 0; i < 10; i++) {
+    for (let i = 0; i < linie; i++) {
         fill("grey");
         rect(0, 0, 50, 50)
         rect(50, 0, 50, 50)
@@ -88,7 +88,7 @@ function draw() {
     }
 }
 function mouseClicked() {
-    if (mouseX > 0 && mouseX < 50 && mouseY > 0 && mouseY < 50) {
+    if (mouseX >= 0 && mouseX <= 50 && mouseY >= 0 && mouseY <= 50) {
         linie = linie + 1
         lineStartX.push(random(50, 450));
         lineStartY.push(random(50, 450));
@@ -104,7 +104,7 @@ function mouseClicked() {
         lineColor.push(random(minColor, maxColor))
     }
     if (mouseX > 50 && mouseX < 100 && mouseY > 0 && mouseY < 50) {
-           linie = linie - 1
+        linie = linie - 1
         lineStartX.splice(linie, 1);
         lineStartY.splice(linie, 1);
         lineStartDx.splice(linie, 1);
