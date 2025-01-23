@@ -22,7 +22,7 @@ function smile(happy: boolean) {
   // <<< Add your code here
   push();
   translate(random(0, width), random(0, height))
-  scale(0.5);
+  scale(0.3);
 
   strokeWeight(5);
   stroke("black");
@@ -35,8 +35,8 @@ function smile(happy: boolean) {
 circle(200, 200, 350);
 
   fill("black");
-  circle(125, 125, 20);
-  circle(275, 125, 20);
+  circle(125, 120, 30);
+  circle(275, 120, 30);
 
   noFill();
 
