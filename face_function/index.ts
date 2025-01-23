@@ -1,4 +1,5 @@
-let smileNext = true;
+let nextSmiling = true; // We start with a happy face
+
 function setup() {
   createCanvas(500, 500);
   angleMode(DEGREES);
@@ -7,40 +8,41 @@ function setup() {
   // +------------------------------ Function name
   // |  +--------------------------- Function parameter
   // v  v
-  smile(true);
+  smile(nextSmiling); // Draw the first face
 }
-function mouseClicked(){
-smileNext = !smileNext;
-smile(smileNext);
+
+function mouseClicked() {
+  nextSmiling = !nextSmiling; // Toggle the next face
+  smile(nextSmiling); // Draw the next face
 }
+
 // Function DEFINITION
 //       +-------------------------- Function name
 //       |     +-------------------- Parameter name
 //       |     |      +------------- Parameter type
 //       v     v      v
 function smile(happy: boolean) {
-  // <<< Add your code here
   push();
-  translate(random(0, width), random(0, height))
-  scale(0.3);
+  translate(random(0, width), random(0, height));
+  scale(0.2);
 
-  strokeWeight(5);
   stroke("black");
-  if(happy){
+  strokeWeight(10);
+  if (happy) {
     fill("yellow");
-  } else{
-    fill("green");
+  } else {
+    fill("lime");
   }
 
-circle(200, 200, 350);
+  circle(200, 200, 350);
 
   fill("black");
-  circle(125, 120, 30);
-  circle(275, 120, 30);
+  circle(125, 125, 20);
+  circle(275, 125, 20);
 
   noFill();
 
-  if(happy) {
+  if (happy) {
     arc(200, 250, 200, 150, 0, 180);
   } else {
     arc(200, 300, 200, 150, 180, 360);
@@ -48,5 +50,3 @@ circle(200, 200, 350);
 
   pop();
 }
-
-
