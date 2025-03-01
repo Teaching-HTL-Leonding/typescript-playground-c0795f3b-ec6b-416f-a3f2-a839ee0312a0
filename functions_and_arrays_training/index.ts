@@ -61,9 +61,9 @@ function getSum(numbersString: string): number {
             num += numbersString[i];
         }
     }
-    if(num)
+    if (num)
         sum += parseInt(num);
-    
+
     return sum;
 }
 
@@ -75,9 +75,25 @@ function getSum(numbersString: string): number {
 * @returns The start index of the number, -1 if the number is not found
 */
 function getIndexOf(numbersString: string, number: number): number {
-    return -1; // <<< Remove this line and implement the function
+    let currentNumber = "";
+    let startIndex = 0;
+    
+    for (let i = 0; i < numbersString.length; i++) {
+        if (numbersString[i] === ",") {
+            if (parseInt(currentNumber) === number) {
+                return startIndex;
+            }
+            currentNumber = "";
+            startIndex = i + 1;
+        } else {
+            currentNumber += numbersString[i];
+        }
+    }
+    if (parseInt(currentNumber) === number) {
+                return startIndex;
+    }
+    return -1
 }
-
 /**
 * Find the index of a number in an array
 * @param array - An array of numbers (e.g. [1, 2, 30, 4, 5])
@@ -85,7 +101,12 @@ function getIndexOf(numbersString: string, number: number): number {
 * @returns The index of the number, -1 if the number is not found
 */
 function findIndexInArray(array: number[], number: number): number {
-    return -1; // <<< Remove this line and implement the function
+    for (let i = 0; i < array.length; i++) {
+        if (array[i] === number) {
+            return i;
+        }
+    }
+    return -1;
 }
 
 /**
@@ -110,8 +131,65 @@ function findIndexInArray(array: number[], number: number): number {
 * * A: Ace
 */
 function decodeCCard(cardShortcode: string): string {
-    return ""; // <<< Remove this line and implement the function
+    const suite = cardShortcode[0];
+    const rank = cardShortcode[1];
+
+    // Decode suite
+    let suiteName: string;
+    switch (suite) {
+        case 'S':
+            suiteName = "Spades";
+            break;
+        case 'H':
+            suiteName = "Hearts";
+            break;
+        case 'D':
+            suiteName = "Diamonds";
+            break;
+        case 'C':
+            suiteName = "Clubs";
+            break;
+        default:
+            // Just in case
+            suiteName = "Unknown";
+    }
+
+    // Decode rank
+    let rankName: string;
+    switch (rank) {
+        case '2':
+        case '3':
+        case '4':
+        case '5':
+        case '6':
+        case '7':
+        case '8':
+        case '9':
+            rankName = rank;
+            break;
+        case 'T':
+            rankName = "10";
+            break;
+        case 'J':
+            rankName = "Jack";
+            break;
+        case 'Q':
+            rankName = "Queen";
+            break;
+        case 'K':
+            rankName = "King";
+            break;
+        case 'A':
+            rankName = "Ace";
+            break;
+        default:
+            // Just in case
+            rankName = "Unknown";
+    }
+
+    return `${rankName} of ${suiteName}`;
 }
+    
 
 /**
 * Find all even numbers in a string of numbers separated by commas
@@ -119,5 +197,28 @@ function decodeCCard(cardShortcode: string): string {
 * @returns An array of even numbers (e.g. [2, 30, 4]), empty array if no even numbers are found
 */
 function findAllEvenNumbers(numberString: string): number[] {
-    return []; // <<< Remove this line and implement the function
+    const evennum: number[] = [];
+    let currentNumber = "";
+    
+    for (let i = 0; i < numberString.length; i++) {
+        if (numberString[i] === ",") {
+            const num = parseInt(currentNumber);
+            if (num % 2 === 0) {
+                evennum.push(num);
+            }
+            currentNumber = "";
+        } else {
+            currentNumber += numberString[i];
+        }
+    }
+    
+    // Check the last number after the loop
+    if (currentNumber) {
+        const num = parseInt(currentNumber);
+        if (num % 2 === 0) {
+            evennum.push(num);
+        }
+    }
+    
+    return evennum;
 }
