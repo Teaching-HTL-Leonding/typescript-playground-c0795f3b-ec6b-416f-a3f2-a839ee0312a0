@@ -5,8 +5,8 @@
 * The game highlights a vertical solution word that is formed from a specific column.
 * Players win when they've guessed all letters in the solution word.
 */
-const cellwidth = 50;
-const cellheight = 50;
+const cellwidth = 35;
+const cellheight = 35;
  
 let animals: string[] = [];
 let startpoints: number[] = [];
@@ -62,11 +62,16 @@ function parsedcrossword(){
  
 function drawcrossword(){
     for(let i = 0; i < descriptions.length; i ++){
-        text(descriptions[i], 350, i * cellheight + 50);        
+        text(descriptions[i], 500, i * cellheight + 30);        
     }
    
     for(let i = 0; i < startpoints.length; i ++){
+        push();
         translate(200, 0);
+        translate(startpoints[i] * cellwidth, i * cellheight + 5);
+        rect(0, 0, cellwidth, cellheight);
+        pop();
+
        
     }
  
