@@ -7,7 +7,12 @@
 */
 const cellwidth = 50;
 const cellheight = 50;
-
+ 
+let animals: string[] = [];
+let startpoints: number[] = [];
+let descriptions: string[] = [];
+ 
+ 
 // Raw input data in format: animalName,startPosition,hint
 const crossword = `krebs,0,Schalentier  
 elefant,-1,Größtes Landtier  
@@ -24,43 +29,47 @@ aal,-1,Schlängelnder Stromleiter
 antilope,-1,Schneller Sprinter der Savanne  
 regenwurm,-2,Bodenlockerer mit Ringeln  
 seegurke,-2,Tarnkünstler der Tiefsee`;
-
+ 
 // The word that players need to completely reveal to win
 const solution = 'klapperschlange';
-
+ 
 // === Write the necessary code starting here ===
 function setup() {
     createCanvas(1000, 1000);
     background("white");
-
+ 
     parsedcrossword();
     drawcrossword();
-
+ 
+ 
 }
 let puzzle: string[][] = [];
-
-function parsedcrossword() {
-    for (const line of crossword.split("\n")) {
+ 
+function parsedcrossword(){
+    for(const line of crossword.split("\n")){
         const chars = line.split(",");
         puzzle.push(chars);
+ 
     }
-    console.log(puzzle)
-}
-
-function drawcrossword() {
-    for (let i = 0; i < puzzle.length; i++) {
-        text(puzzle[i][2], 350, i * cellheight + 50);
+ 
+    for(let i = 0; i < puzzle.length; i ++){
+        animals.push(puzzle[i][0]);
+        startpoints.push(parseInt(puzzle[i][1]));
+        descriptions.push(puzzle[i][2])
     }
-    for (let i = 0; i < puzzle.length; i++) {
-        push();
-        translate(cellheight, 0)
-        pop();
-        push();
-        translate(parseInt(puzzle[i][1])* cellwidth, i * cellheight, 0)}
-        rect(0, 0, cellwidth, cellheight);
-        pop();
-        noFill();
-        stroke("black")
-
-
+ 
 }
+ 
+function drawcrossword(){
+    for(let i = 0; i < descriptions.length; i ++){
+        text(descriptions[i], 350, i * cellheight + 50);        
+    }
+   
+    for(let i = 0; i < startpoints.length; i ++){
+        translate(200, 0);
+       
+    }
+ 
+}
+ 
+ 
