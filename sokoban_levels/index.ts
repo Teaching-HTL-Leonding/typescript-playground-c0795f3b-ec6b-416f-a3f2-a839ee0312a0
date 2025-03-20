@@ -19,7 +19,7 @@ const images: p5.Image[] = [];
 // for multiple levels as strings. Switch between levels
 // by changing the index in the levels array. Test your
 // implementation with different levels.
-const levelString = levels[0];
+const levelString = levels[2];
 
 // 2D array to store the level grid after parsing
 let level: string[][] = [];
@@ -46,7 +46,7 @@ function preload() {
 * @returns The corresponding p5.Image object
 */
 function getBlockImageBySymbol(type: string): p5.Image {
-    switch (type){
+    switch (type) {
         case "X": return images[0];
         case ".": return images[2];
         case "b": return images[3];
@@ -55,31 +55,38 @@ function getBlockImageBySymbol(type: string): p5.Image {
     }
 
     //if (type === "X") {
-       // return images[0];
+    // return images[0];
     //} else if (type === ".") {
-     // } else if (type === "@") {
-      //  return images[1];
-  // } else if(type === "b"){
-      //  return images[3];
-  //  } else if( type === " "){
-   //     return images[1];
+    // } else if (type === "@") {
+    //  return images[1];
+    // } else if(type === "b"){
+    //  return images[3];
+    //  } else if( type === " "){
+    //     return images[1];
     //} else if(type === "B"){
-        return images[4];
-    }
+    //return images[4];
+}
 
-   // return images[0]; // <<< Replace this code with your implementation
+// return images[0]; // <<< Replace this code with your implementation
 
 
 // Size of each cell in pixels
 const cellSize = 64;
 
 function setup() {
-   createCanvas(1000, 1000);
-   background("white");
+    createCanvas(1000, 1000);
+    background("white");
 
-   for(const row of level){
-    for (const cell of row){
-        
+    for (const row of level) {
+        push();
+        for (const cell of row) {
+            if (cell !== "_") {
+                const img = getBlockImageBySymbol(cell);
+                image(img, 0, 0, cellSize, cellSize)
+            }
+            translate(cellSize, 0)
+        }
+        pop();
+        translate(0, cellSize)
     }
-   }
 }
