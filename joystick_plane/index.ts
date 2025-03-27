@@ -9,11 +9,11 @@ let fighterPositionY = 0;
 let pressedcircle = false;
 
 let smallcircleradius = 10;
-let bigcircleradius = 50; 
+let bigcircleradius = 50;
 
 
-  let circleX = 500 / 2;
-  let circleY = 500 - 50;
+let circleX = 500 / 2;
+let circleY = 500 - 50;
 
 function preload() {
   fighter = loadImage("https://cddataexchange.blob.core.windows.net/images/Spaceship.png");
@@ -38,8 +38,9 @@ function draw() {
   translate(width / 2 + fighterPositionX, height / 2 + fighterPositionY);
   image(fighter, 0, 0, fighterDisplayWidth, fighterDisplayHeight);
   pop();
+   
+   movePlane(circleX, circleY, mouseX, mouseY)
 }
-
 
 
 function mousePressed() {
@@ -47,8 +48,8 @@ function mousePressed() {
 }
 
 
-function mouseDragged() { 
-  if(pressedcircle === true){
+function mouseDragged() {
+  if (pressedcircle === true) {
     circleX = mouseX
     circleY = mouseY
   }
@@ -58,9 +59,34 @@ function mouseReleased() {
   pressedcircle = false;
 }
 
-function distance(x:number,y:number,):boolean{
+function distance(x: number, y: number,): boolean {
   const dx = mouseX - x;
   const dy = mouseY - y;
   const distance = Math.sqrt(dx * dx + dy * dy);
   return distance <= smallcircleradius;
+}
+
+function movePlane(x: number, y: number, xm: number, ym: number) {
+
+  let dx = 0
+  let dy = 0
+
+  dx = x - width / 2;
+  dy = y - (height - 50);
+
+
+  fighterPositionX += dx / 5
+  fighterPositionY += dy / 5
+  if (fighterPositionX > 250) {
+    fighterPositionX = 250
   }
+  else if (fighterPositionX < -250) {
+    fighterPositionX = -250
+  }
+  if (fighterPositionY > 250) {
+    fighterPositionY = 250
+  }
+  else if (fighterPositionY < -250) {
+    fighterPositionY = -250
+  }
+}
