@@ -31,7 +31,7 @@ function draw() {
 
   noStroke();
   fill("black");
-  circle(width/2, height - 50, smallcircleradius * 2)
+  circle(circleX, circleY, smallcircleradius * 2)
 
   push();
   imageMode(CENTER);
@@ -43,7 +43,7 @@ function draw() {
 
 
 function mousePressed() {
-  pressedcircle = distance(mouseX, mouseY);
+  pressedcircle = distance(circleX, circleY);
 }
 
 
@@ -55,10 +55,11 @@ function mouseDragged() {
 }
 
 function mouseReleased() {
+  pressedcircle = false;
 }
 
 function distance(x:number,y:number,):boolean{
-  const dx = mouseX -x;
+  const dx = mouseX - x;
   const dy = mouseY - y;
   const distance = Math.sqrt(dx * dx + dy * dy);
   return distance <= smallcircleradius;
