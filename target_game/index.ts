@@ -11,46 +11,31 @@ let dragging = false;
 function setup() {
   createCanvas(800, 600);
 
-  circlepositionX = random(0, width - 2 * smallcircleRadius);
-  circlepositionY = random(0, height - 2 * smallcircleRadius)
+  circlepositionX = random(smallcircleRadius, width - smallcircleRadius);
+  circlepositionY = random(smallcircleRadius, height - smallcircleRadius)
 
-  targetpositionX = random(targetpositionX, width - targetRadius);
-  targetpositiony = random(targetpositiony, width - targetRadius);
+  targetpositionX = random(targetRadius, width - targetRadius);
+  targetpositiony = random(targetRadius, height - targetRadius);
+
+  circleOverlap();
 
 }
 
 function draw() {
   background("lightgray");
 
-  if (circlepositionX > width - smallcircleRadius) {
-    circlepositionX = width - smallcircleRadius;
-  } else if (circlepositionX < smallcircleRadius) {
-    circlepositionX = smallcircleRadius;
-  } else if (circlepositionY > height - smallcircleRadius) {
-    circlepositionY = height - smallcircleRadius;
-  } else if (circlepositionY < smallcircleRadius) {
-    circlepositionY = smallcircleRadius
-  }
+  noFill();
+  stroke("black");
+  circle(targetpositionX, targetpositiony, 2 * targetRadius);
 
   fill("blue");
   noStroke();
-  circle(circlepositionX, circlepositionY, smallcircleRadius * 2);
+  circle(circlepositionX, circlepositionY, 2 * smallcircleRadius);
 
-  if (targetpositionX > width - targetRadius) {
-    targetpositionX = width - targetRadius;
-  } else if (targetpositionX < targetRadius) {
-    targetpositionX = targetRadius;
-  } else if (targetpositiony > height - targetRadius) {
-    targetpositiony = height - targetRadius;
-  } else if (targetpositiony < targetRadius) {
-    targetpositiony = targetRadius
-  }
-  noFill();
-  stroke("black");
-  circle(targetpositionX, targetpositiony, targetRadius * 2);
+  fill("black");
+  text(`Score: ${point}`, 10, height - 10);
 
-
-
+  
 }
 
 function mousePressed() {
@@ -76,15 +61,19 @@ function mouseReleased() {
 
 // <<< Add additional functions here
 function calDistance(x1: number, y1: number, x2: number, y2: number) {
-  let dx = x2 - x1;
-  let dy = y2 - y1;
+  let dx = x1 - x2;
+  let dy = y1 - y2;
 
   return Math.sqrt(dx * dx + dy * dy);
 }
 
-function circleOvelap(){
+function circleOverlap() {
   let distance = calDistance(circlepositionX, circlepositionY, targetpositionX, targetpositiony);
-  return distance < smallcircleRadius + targetRadius;
+  while (distance < smallcircleRadius + targetRadius) {
+    circlepositionX = random(smallcircleRadius, width - smallcircleRadius);
+    circlepositionY = random(smallcircleRadius, height - smallcircleRadius);
+    distance = calDistance(circlepositionX, circlepositionY, targetpositionX, targetpositiony);
 
+  }
 
 }
