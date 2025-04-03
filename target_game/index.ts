@@ -1,39 +1,60 @@
 // <<< Add your game variables here
 const smallcircleRadius = 50;
-let beginpositionX = 0;
-let beginpositionY = 0;
+const targetRadius = 70;
+let circlepositionX = 0;
+let circlepositionY = 0;
+let targetpositionX = 0;
+let targetpositiony = 0;
 let dragging = false;
+
+
 function setup() {
   createCanvas(800, 600);
 
-  beginpositionX = random(0, width - 3 * smallcircleRadius);
-  beginpositionY = random(0, height - 3 * smallcircleRadius)
+  circlepositionX = random(0, width - 2 * smallcircleRadius);
+  circlepositionY = random(0, height - 2 * smallcircleRadius)
+
+  targetpositionX = random(targetpositionX, width - targetRadius);
+  targetpositiony = random(targetpositiony, width - targetRadius);
 
 }
 
 function draw() {
   background("lightgray");
 
-  if (beginpositionX > width - smallcircleRadius) {
-    beginpositionX = width - smallcircleRadius;
-  } else if (beginpositionX < smallcircleRadius) {
-    beginpositionX = smallcircleRadius;
-  } else if (beginpositionY > height - smallcircleRadius) {
-    beginpositionY = height - smallcircleRadius;
-  } else if (beginpositionY < smallcircleRadius) {
-    beginpositionY = smallcircleRadius
+  if (circlepositionX > width - smallcircleRadius) {
+    circlepositionX = width - smallcircleRadius;
+  } else if (circlepositionX < smallcircleRadius) {
+    circlepositionX = smallcircleRadius;
+  } else if (circlepositionY > height - smallcircleRadius) {
+    circlepositionY = height - smallcircleRadius;
+  } else if (circlepositionY < smallcircleRadius) {
+    circlepositionY = smallcircleRadius
   }
-
-
 
   fill("blue");
   noStroke();
-  circle(beginpositionX, beginpositionY, smallcircleRadius);
+  circle(circlepositionX, circlepositionY, smallcircleRadius * 2);
+
+  if (targetpositionX > width - targetRadius) {
+    targetpositionX = width - targetRadius;
+  } else if (targetpositionX < targetRadius) {
+    targetpositionX = targetRadius;
+  } else if (targetpositiony > height - targetRadius) {
+    targetpositiony = height - targetRadius;
+  } else if (targetpositiony < targetRadius) {
+    targetpositiony = targetRadius
+  }
+  noFill();
+  stroke("black");
+  circle(targetpositionX, targetpositiony, targetRadius * 2);
+
+
 
 }
 
 function mousePressed() {
-  const distancestick = calDistance(mouseX, mouseY, beginpositionX, beginpositionY)
+  const distancestick = calDistance(mouseX, mouseY, circlepositionX, circlepositionY)
 
   if (distancestick < smallcircleRadius) {
     dragging = true;
@@ -42,8 +63,8 @@ function mousePressed() {
 }
 function mouseDragged() {
   if (dragging) {
-    beginpositionX = mouseX;
-    beginpositionY = mouseY;
+    circlepositionX = mouseX;
+    circlepositionY = mouseY;
   }
   // <<< Add mouse dragged logic here
 }
@@ -59,4 +80,11 @@ function calDistance(x1: number, y1: number, x2: number, y2: number) {
   let dy = y2 - y1;
 
   return Math.sqrt(dx * dx + dy * dy);
+}
+
+function circleOvelap(){
+  let distance = calDistance(circlepositionX, circlepositionY, targetpositionX, targetpositiony);
+  return distance < smallcircleRadius + targetRadius;
+
+
 }
